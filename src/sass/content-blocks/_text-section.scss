@@ -1,0 +1,12 @@
+.text-section {
+	margin: 50px 0;
+
+	@include bp-lg {
+		margin: 100px 0;
+	}
+
+	.cms-content {
+		margin: 0;
+		padding: 0;
+	}
+}

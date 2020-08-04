@@ -1,0 +1,7 @@
+.contact-form-block {
+	margin: 50px 0;
+	
+	@include bp-lg {
+		margin: 80px 0;
+	}
+}

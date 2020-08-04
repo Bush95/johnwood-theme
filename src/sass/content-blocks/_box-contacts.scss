@@ -1,0 +1,101 @@
+.block-3-contact {
+	margin: 50px 0;
+	
+	@include bp-lg {
+		margin: 80px 0;
+	}
+
+	& {
+		.box-contacts {
+			@extend .fromTop;
+		}
+	}
+
+	&.in-viewport {
+		.box-contacts {
+			@extend .in-viewport.fromTop;
+			transition: background 300ms, opacity 300ms, transform 300ms;
+
+			@include bp-lg {
+				&:nth-child(2) {
+					transition-delay: 0ms, 150ms, 150ms, 150ms;
+				}
+				&:nth-child(3) {
+					transition-delay: 0ms, 300ms, 300ms, 300ms;
+				}
+			}
+		}
+	}
+}
+
+.box-contacts {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 310px;
+	box-shadow: 0 0 10px 0 rgba($dark, 0.17);
+	transition: all .3s ease;
+	margin-bottom: 30px;
+
+	@include bp-lg {
+		margin-bottom: 0;
+		box-shadow: none;
+		border: 1px solid #e1e1e1;
+	}
+
+	&__body {
+		max-width: 250px;
+	}
+
+	&__icon {
+		font-size: 6rem;
+		line-height: 1;
+		color: $turquoise;
+	}
+
+	&__decor {
+		margin: 30px auto;
+		height: 2px;
+		max-width: 100px;
+		background: $turquoise;
+		transition: all .3s ease-in-out;
+		
+		@include bp-lg {
+			margin-top: 17px;
+			margin-bottom: 17px;
+			width: 0;
+		}
+	}
+
+	&__link {
+		font-size: 18px;
+		line-height: 1.67;
+		letter-spacing: .025em;
+		margin: 0;
+
+		a {
+			text-decoration: none;
+			color: $dark;
+			transition: color 120ms;
+
+			&:hover {
+				color: $turquoise;
+			}
+		}
+	}
+	
+	&:hover {
+		@include bp-lg {
+			border-color: transparent;
+			box-shadow: 0 0 10px 0 rgba($dark, 0.17);
+
+			.box-contacts__decor {
+				margin-top: 30px;
+				margin-bottom: 30px;
+				width: 100%;
+				transition: margin .3s ease, width .4s ease-in-out;
+			}
+		}
+	}
+}

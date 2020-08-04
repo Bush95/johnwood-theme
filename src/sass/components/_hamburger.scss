@@ -1,0 +1,148 @@
+.hamburger {
+    width:50px;
+    height:50px;
+    position: relative;
+    cursor: pointer;
+
+    @include bp-lg {
+        margin-right: 10px;
+    }
+
+    &:hover {
+        span {
+            background: $turquoise;
+        }
+    }
+
+    span {
+        display:block;
+        background: $dark;
+        transition: all 160ms;
+    }
+
+    .burger {
+        position:absolute;
+        height:100%;
+        width:100%;
+
+        span {
+            width: 28px;
+            height: 2px;
+            position:relative;
+            top: 6px;
+            left: 12px;
+            margin: 8px 0;
+        }
+
+        &:nth-child(1){
+            transition-delay:.4s;
+        }
+
+        &:nth-child(2){
+            transition-delay:.525s;
+        }
+
+        &:nth-child(3){
+            transition-delay:.65s;
+        }
+    }
+
+    .cross {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform: rotate(45deg);
+
+        span{
+
+            &:nth-child(1){
+                height:0%;
+                width:3px;
+                position:absolute;
+                top:10%;
+                left:24px;
+                transition-delay:.1s;
+            }
+
+            &:nth-child(2){
+                width:0%;
+                height:3px;
+                position:absolute;
+                left:10%;
+                top:24px;
+                transition-delay:.25s;
+            }
+        }
+    }
+
+    &.nav-burger {
+
+    }
+
+    &.social-burger {
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        @include bp-lg {
+            position: relative;
+        }
+
+        @include lt-bp-lg{
+            .burger {
+                span {
+                    &:nth-child(1){
+                    }
+
+                    &:nth-child(2){
+                        width: 20px;
+                        left: auto;
+                        right: -19px;
+                    }
+
+                    &:nth-child(3){
+                        width: 12px;
+                        left: auto;
+                        right: -27px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nav-open {
+    .hamburger.nav-burger {
+        .burger {
+            span {
+                width:0%;
+
+                &:nth-child(1){
+                    transition-delay:0s;
+                }
+                &:nth-child(2){
+                    transition-delay:.125s;
+                }
+                &:nth-child(3){
+                    transition-delay:.25s;
+                }
+            }
+        }
+
+        .cross {
+            span {
+                &:nth-child(1){
+                    height:80%;
+                    transition-delay:.335s;
+                }
+            }
+
+            span {
+                &:nth-child(2){
+                    width:80%;
+                    transition-delay:.175s;
+                }
+            }    
+        }
+    }
+}

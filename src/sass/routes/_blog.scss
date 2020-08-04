@@ -1,0 +1,58 @@
+.blog,
+.category,
+.tag,
+.search-results,
+.search-no-results {
+	.banner {
+		margin-bottom: 60px;
+	}
+
+	.search-results-title {
+		text-align: left;
+		margin-top: 0;
+	}
+
+	.search-page-no-results {
+		margin-top: 0;
+		padding-top: 0;
+	}
+}
+
+
+
+.blog-sidebar {
+	padding-left: 45px;
+
+	.search-form {
+		position: relative;
+		margin-bottom: 50px;
+
+		input {
+			background-color: transparent;
+			border: solid 2px $lightgrey;
+			color: $dark;
+			min-height: 52px;
+
+			&::placeholder {
+				color: $grey;
+			}
+
+			&:focus::placeholder {
+				color: rgba($grey, 0);
+			}
+		}
+
+		button {
+			@include resetbtn;
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 65px;
+			text-align: center;
+			cursor: pointer;
+			font-size: 2.2rem;
+			color: $dark;
+		}
+	}
+}

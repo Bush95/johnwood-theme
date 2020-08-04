@@ -1,0 +1,7 @@
+.recent-news {
+	margin: 50px 0 30px;
+
+	@include bp-lg {
+		margin: 100px 0 80px;
+	}
+}

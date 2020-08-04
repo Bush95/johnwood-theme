@@ -1,0 +1,147 @@
+.post-view main {
+	overflow: hidden;
+}
+
+.cms-content {
+    font-size: 1.6rem;
+    line-height: 3rem;
+    font-weight: 400;
+    color: #444444;
+	margin-top: 30px;
+    padding: 20px 0;
+
+    p {
+        margin: 25px 0;
+    }
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 50px;
+		letter-spacing: 0.75px;
+		line-height: normal;
+	}
+
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 3.4rem;
+        margin-bottom: 18px;
+    }
+
+    h4 {
+        font-size: 3rem;
+    }
+
+    h5 {
+        font-size: 2.8rem;
+    }
+
+    h6 {
+        font-size: 2rem;
+    }
+
+
+	blockquote {
+    	@include font-poppins();
+		position: relative;
+	    margin: 10px 0;
+	    font-size: 2.2rem;
+	    line-height: 3.2rem; 
+	    padding: 30px 45px 30px 55px;
+    	max-width: 700px;
+    	margin: 0 auto;
+        background-color: #FBFBFB;
+
+    	> p {
+    		font-size: 3rem;
+    		line-height: 4rem;
+            font-weight: 400;
+    	}
+
+        cite {
+            font-size: 1.8rem;
+        }
+
+	    &::before {
+	        content: open-quote;
+	        font-size: 12rem;
+	        position: absolute;
+	        top: 60px;
+	        right: 40px;
+            color: $turquoise;
+	    }
+	}
+
+	ul,
+	ol {
+		padding: 0 0 0 16px;
+	}
+
+    a:not(.btn) {
+        text-decoration: none;
+        color: $turquoise;
+        font-weight: 500;
+        transition: color 80ms;
+
+        &:hover {
+            color: darken($turquoise, 0.45);
+            text-decoration: underline;
+        }
+    }
+
+    img {
+        width: auto;
+        height: auto;
+        display: block;
+        background-color: #F4F4F4;
+    }
+
+	.wp-block-image {
+		margin: 30px 0;
+
+		img {
+			vertical-align: middle;
+			width: 100%;
+		}
+
+		figcaption {
+			text-align: center;
+			font-size: 1.4rem;
+			opacity: 0.7;
+		}
+	}
+
+    .is-style-full-width {
+	    max-width: 100vw;
+	    background-color: #ffffff;
+	    width: 100vw;
+	    margin: 30px 0px;
+	    margin-left: calc(50% + -1 * 50vw);
+
+	    figure {
+	    	width: 100%;
+	    }
+
+	    img {
+	    	width: 100%;
+	    	max-width: 100%;
+	    }
+    }
+
+    .wp-block-group {
+    	max-width: 860px;
+    	margin: 0 auto;
+    }
+}

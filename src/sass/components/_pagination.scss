@@ -1,0 +1,54 @@
+.pagination,
+.woocommerce-pagination {
+	margin: 50px 0;
+
+	ul.page-numbers {
+		@include resetlist;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+		border: none !important;
+
+		li {
+			display: inline-block;
+			margin: 0 8px;
+
+			> .page-numbers {
+    			@include font-teko();
+				display: block;
+				width: 45px;
+				height: 45px;
+				font-size: 2.4rem;
+				line-height: 47px;
+				font-weight: 400;
+				text-align: center;
+				box-shadow: 0 0 3px 1px $lightgrey;
+				color: $dark;
+				text-decoration: none;
+				transition: color 200ms, box-shadow 200ms;
+				border-radius: 3px;
+
+				&:hover {
+					color: $turquoise;
+					box-shadow: 0 0 0 1px $lightgrey,
+								0 0 3px 0 $turquoise;
+
+					i {
+						color: $dark;
+					}
+				}
+
+				&.current {
+					color: $turquoise;
+					border-color: transparent;
+				}
+
+				i {
+					color: $grey;
+					font-size: 2rem;
+					transition: color 200ms;
+				}
+			}
+		}
+	}
+}

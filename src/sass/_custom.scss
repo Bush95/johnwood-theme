@@ -1,0 +1,62 @@
+$assets: '../../assets';
+
+/* custom bootstrap variables */
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25,
+    ),
+    2: (
+      $spacer * 0.5,
+    ),
+    3: $spacer,
+    4: (
+      $spacer * 1.5,
+    ),
+    5: (
+      $spacer * 2,
+    ),
+    6: (
+      $spacer * 3,
+    ),
+    7: (
+      $spacer * 4,
+    ),
+    8: (
+      $spacer * 5,
+    ),
+    9: (
+      $spacer * 6,
+    ),
+    10: (
+      $spacer * 7,
+    ),
+  ),
+  $spacers
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  fhd: 1900px,
+  qhd: 2540px //uhd: 3840px,,,,,,,,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 726px,
+    lg: 960px,
+  xl: 1200px,
+  fhd: 1330px,
+  qhd: 1600px // 2000px
+    //uhd: 3000px,,,,,,,,
+);
+
+$grid-columns: 12;
+$grid-gutter-width: 30px;

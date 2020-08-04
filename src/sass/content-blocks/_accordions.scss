@@ -1,0 +1,97 @@
+.accordions {
+	margin: 50px 0;
+	
+	@include bp-lg {
+		margin: 80px 0;
+	}
+
+	&__list {
+		@include resetlist();
+	}
+
+	&__list-item {
+			display: block;
+			width: 100%;
+			border: solid 1px #e4e4e4;
+			margin-bottom: 15px;
+	}
+
+	.accordion {
+
+		&.active {
+			.accordion__title i.fa-plus {
+				display: none;
+			}
+		}
+
+		&__title {
+			color: $turquoise;
+			display: flex;
+			justify-content: space-between;
+			padding: 33px 60px 29px 30px;
+			margin: 0;
+			cursor: pointer;
+			transition: color 150ms;
+			font-size: 2.4rem;
+			position: relative;
+			color: $dark;
+		    line-height: 1;
+		    font-weight: 400;
+
+			&:hover {
+				color: $turquoise;
+			}
+
+			.icon {
+				width: 32px;
+				height: 32px;
+				text-align: center;
+				position: relative;
+				border: solid 2px $turquoise;
+				border-radius: 32px;
+				color: $dark;
+				position: absolute;
+				right: 30px;
+				top: 28px;
+
+				i {
+					font-size: 1.6rem;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+		}
+
+		&__content {
+			display: none; //JS commmon.js
+			border-top: solid 1px #e4e4e4;
+			padding: 10px 30px;
+
+			.date {
+				opacity: 0.7;
+				margin: 0 0 15px 0;
+			}
+
+			img {
+				vertical-align: middle;
+				width: 100%;
+			}
+
+			.cms-content {
+				margin: 0;
+			}
+		}
+
+		&.active {
+			.accordion__title {
+				color: $turquoise;
+
+				.icon {
+					color: $turquoise;
+				}
+			}
+		}
+	}
+}

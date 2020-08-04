@@ -1,0 +1,146 @@
+.single-product {
+
+	.site-main {
+		margin-top: 60px;
+	}
+
+	.product .onsale {
+		position: absolute;
+		color: #FFFFFF;
+		left: 15px;
+		top: 0;
+		margin: 0;
+		background-color: $turquoise;
+		border-radius: 0;
+		line-height: 1;
+		padding: 10px 15px;
+		min-height: 10px;
+		z-index: 2;
+		font-size: 1.4rem;
+	}
+
+	.entry-summary {
+		// text-align: center;
+
+		@include bp-lg {
+			text-align: left;
+		}
+	}
+
+	.woocommerce-product-gallery__wrapper {
+		margin: 0;
+
+		img {
+			width: 100%;
+			vertical-align: middle;
+		}
+	}
+
+	.product_title {
+		text-transform: uppercase;
+
+		@include bp-lg {
+			margin-top: 0;
+			font-size: 4.8rem;
+			line-height: 5rem;
+		}
+	}
+
+	.product-button,
+	.product-additional-buttons .btn {
+		width: 100%;
+
+		@include bp-md {
+			width: 240px;
+		}
+	}
+	.product-additional-buttons {
+		margin-top: 15px;
+	}
+
+	.product-attributes {
+		@include resetlist();
+		border-top: solid 1px $lightgrey;
+		padding: 20px 0;
+		margin-top: 20px;
+
+		&__item {
+			
+		}
+
+		&__label {
+
+		}
+
+		&__value {
+
+		}
+	}
+
+	// Tabs
+	.woocommerce-tabs {
+		margin-top: 30px;
+		margin-bottom: 60px;
+
+		@include bp-lg {
+			margin-top: 60px;
+		}
+
+		.tabs {
+			@include resetlist;
+
+			li {
+				display: inline-block;
+
+				a {
+    				@include font-teko();
+    				text-transform: uppercase;
+    				font-size: 1.8rem;
+    				letter-spacing: 1px;
+    				font-weight: 500;
+					display: block;
+					color: #9b9b9b;
+					text-decoration: none;
+					padding: 20px 20px 16px;
+					border: solid 1px transparent;
+					border-bottom: none;
+					transition: color 200ms, border 200ms;
+					white-space: nowrap;
+
+					&:hover {
+						color: $dark;
+					}
+				}
+
+				&.active a {
+					color: $dark;
+					border-color: $lightgrey;
+				}
+			}
+		}
+
+		.woocommerce-Tabs-panel {
+			border: solid 1px $lightgrey;
+			padding: 15px;
+
+			@include bp-lg {
+				padding: 25px 40px
+			}
+
+			a {
+				color: $grey;
+				transition: color 160ms;
+
+				&:hover {
+					color: $turquoise;
+				}
+			}
+		}
+	}
+
+	.social-share {
+		border-top: solid 1px $lightgrey;
+		margin-top: 30px;
+		padding-top: 30px;
+	}
+}

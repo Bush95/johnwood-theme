@@ -1,0 +1,64 @@
+.cookie-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 15px 10px 0;
+    background-color: #FFFFFF;
+    box-shadow:  0 0 5px rgba(#000000, 0.2);
+    z-index: 10001;
+    transform: translateY(100%);
+    transition: transform 500ms;
+
+    &__buttons {
+        margin-top: 10px;
+
+        button {
+            margin-right: 10px;
+            min-width: 110px;
+            padding: 5px;
+        }
+
+        .c-BlockBtn--navy {
+            &:hover {
+                background-color: lighten(#3C61A6, 6%);
+            }
+            &:focus {
+                background-color: darken(#3C61A6, 6%);
+            }
+        }
+    }
+
+    &__text {
+        font-size: 0.7rem;
+    }
+
+    .cookie-notice-open & {
+        transform: translateY(0);
+    }
+}
+
+body {
+    &.cookie-notice-init {
+        &::before {
+            content: '';
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#000000, 0.3);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 500ms, visibility 500ms;
+        }
+
+        &.cookie-notice-open {
+            &::before {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}

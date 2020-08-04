@@ -1,0 +1,37 @@
+.social-share {
+    @include bp-lg {
+       white-space: nowrap;
+    }
+
+    &__list {
+		@include resetlist;
+        display: inline-block;
+    }
+
+    &__label {
+		@include font-teko;
+		text-transform: uppercase;
+        display: inline-block;
+        font-size: 2rem;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-left: 6px;
+
+        a {
+        	color: $dark;
+        	text-decoration: none;
+        	transition: color 160ms;
+        	font-size: 2rem;
+
+        	&:hover {
+        		color: $turquoise;
+        	}
+        }
+    }
+
+    [class^='icon'] {
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,60 @@
+.accreditations {
+	margin: 60px 0;
+	
+	&__item {
+		display: inline-block;
+		vertical-align: middle !important;
+
+		&-wrap {
+			display: block;
+			border: solid 1px #e1e1e1;
+			position: relative;
+			width: 100%;
+
+			&::before {
+				content: '';
+				display: block;
+				width: 100%;
+				padding-top: 65%;
+			}
+
+			img {
+				position: absolute;
+				vertical-align: middle;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				max-width: 100%;
+				max-height: 100%;
+				width: auto;
+				padding: 15px;
+			}
+		}
+
+		a.accreditations__item-wrap {
+			transition: opacity 300ms;
+			
+			&:hover {
+				opacity: 0.8;
+
+				img {
+					transform: scale(0.92) translate(-50%, -50%);
+				}
+			}
+		}
+
+		&.tns-item {
+			img {
+				transition: transform 400ms;
+				display: block;
+				margin: 0 auto;
+				transform-origin: left top;
+			}
+		}
+	}
+
+	.tns-nav {
+		text-align: center;
+		margin-top: 30px;
+	}
+}

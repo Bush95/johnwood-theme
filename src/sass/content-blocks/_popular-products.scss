@@ -1,0 +1,31 @@
+.popular-products {
+	margin: 50px 0;
+
+	@include bp-lg {
+		margin: 100px 0;
+	}
+	
+	&__image {
+		margin-bottom: 30px;
+
+		@include bp-lg {
+			margin-bottom: 0;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+	}
+	ul {
+		@include resetlist();
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		
+		li {
+			@include bp-lg {
+				flex: 0 0 calc(50% - 15px);
+			}
+		}
+	}
+}

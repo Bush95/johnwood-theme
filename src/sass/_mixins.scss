@@ -1,0 +1,123 @@
+@mixin resetlist {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+@mixin resetbtn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+@mixin justifyfix {
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 0;
+    }
+}
+
+@mixin fontawesome() {
+    display: inline-block;
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+@mixin font-poppins() {
+    font-family: 'Poppins', sans-serif;
+}
+
+@mixin font-teko() {
+    font-family: 'Teko', sans-serif;
+}
+
+/* BREAKPOINTS */
+@mixin lt-bp-xs {
+  @media (max-width: (map-get($grid-breakpoints, xs) - 1)) {
+    @content;
+  }
+}
+
+@mixin bp-xs {
+  @media (min-width: map-get($grid-breakpoints, xs)) {
+    @content;
+  }
+}
+
+@mixin lt-bp-sm {
+  @media (max-width: (map-get($grid-breakpoints, sm) - 1)) {
+    @content;
+  }
+}
+
+@mixin bp-sm {
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin lt-bp-md {
+  @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin lt-bp-lg {
+  @media (max-width: (map-get($grid-breakpoints, lg) - 1)) {
+    @content;
+  }
+}
+
+@mixin bp-lg {
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin lt-bp-xl {
+  @media (max-width: (map-get($grid-breakpoints, xl) - 1)) {
+    @content;
+  }
+}
+
+@mixin bp-xl {
+  @media (min-width: map-get($grid-breakpoints, xl)) {
+    @content;
+  }
+}
+
+@mixin lt-bp-fhd {
+  @media (max-width: (map-get($grid-breakpoints, fhd) - 1)) {
+    @content;
+  }
+}
+
+@mixin bp-fhd {
+  @media (min-width: map-get($grid-breakpoints, fhd)) {
+    @content;
+  }
+}
+
+@mixin lt-bp-qhd {
+  @media (max-width: (map-get($grid-breakpoints, qhd) - 1)) {
+    @content;
+  }
+}
+
+@mixin bp-qhd {
+  @media (min-width: map-get($grid-breakpoints, qhd)) {
+    @content;
+  }
+}

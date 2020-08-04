@@ -1,0 +1,356 @@
+// Turn off plugin's 'Output CSS'
+input,
+textarea,
+select {
+    display: block;
+    width: 100%;
+    min-height: 60px;
+    padding: 17px 22px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: .025em;
+    color: #151515;
+    background-color: #f7f7f7;
+    background-image: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    transition: .3s ease-in-out;
+    border: 1px solid #f7f7f7;
+
+    &:focus {
+        border-color: darken($leading-color, 10%);
+        outline: none;
+    }
+
+    &::placeholder {
+        color: #9DA2A9;
+        transition: color 160ms;
+    }
+
+    &.large {
+        width: 100%;
+    }
+}
+
+select {
+    appearance: none;
+    border-radius: 0;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+    padding: 15px 10px;
+    width: 100%;
+    background-color: lightgrey;
+}
+
+.nf-form-cont {
+
+    .nf-form-fields-required {
+        display: none;
+    }
+
+    .nf-form-content {
+        margin: 0;
+
+        i {
+            color: red;
+        }
+
+        input:not([type=button]),
+        textarea {
+            border: none;
+            background-color: lightgrey;
+            font-weight: 300;
+
+            &::placeholder {
+                color: #000000;
+            }
+        }
+
+        textarea {
+            height: 140px !important;
+        }
+
+        input::placeholder {
+            color: #000000;
+        }
+
+        .field-wrap {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .nf-field-label {
+            max-width: 25px;
+        }
+
+        .nf-error-msg, 
+        .ninja-forms-req-symbol {
+            display: none;
+        }
+
+        .submit-container .field-wrap{
+            border: none;
+            background-color: transparent;
+
+            .btn {
+                line-height: normal !important;
+            }
+        }
+
+        button,
+        input[type=button],
+        input[type=submit] {
+            background: $leading-color;
+            line-height: 30px;
+            font-size: 1.4rem;
+            width: 150px;
+            letter-spacing: 01.5px;
+        }
+
+        input.input-product-title {
+            border: solid 1px $turquoise;
+        }
+    }
+}
+
+.nf-response-msg {
+    background-color: orange;
+    color: #ffffff;
+    padding: 20px;
+}
+        
+.nf-field-container {
+    background-color: lightgrey;
+
+
+    .nf-field {
+        position: relative;
+    }
+
+    .nf-field-label {
+        padding-right: 0px !important;
+        margin-right: 10px;
+        margin-top: 10px !important;
+        position: absolute;
+        left: 0;
+        z-index: 2;
+        top: 5px;
+    }
+
+    .nf-field-element {
+        width: 100% !important; 
+        
+    }
+
+    .textarea-wrap {
+        .nf-field-label {
+            top: 3px;
+        }
+    }
+
+    .submit-wrap {
+
+        .nf-field-element {
+            padding-left: 0 !important;
+            background-color: white;
+        }
+
+        .nf-field-label {
+            display: none !important;
+        }
+
+        input[type="button"] {
+            &:hover {
+                background-color: darken($leading-color, 10%);
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+.nf-form-cont {
+    .nf-form-content {
+        max-width: none !important;
+        padding: 0 !important;
+
+        input:not([type=button]), 
+        textarea {
+            background-color: #f7f7f7;
+            color: $dark;
+            font-size: 1.4rem;
+
+            &:focus {
+                background-color: #f7f7f7;
+
+                &::placeholder {
+                    color: rgba(#FFFFFF, 0);
+                }
+            }
+        }
+
+        .listselect-wrap .nf-field-element div,
+        .ninja-forms-field { 
+            padding: 17px 22px;
+        }
+
+        
+        .list-select-wrap .nf-field-element > div:focus, 
+        input:not([type=button]):focus, 
+        textarea:focus {
+            color: $dark;
+        }
+
+        .field-wrap {
+            border: solid 1px #f7f7f7;
+            transition: border 160ms;
+
+            &.nf-error {
+                border-color: #e80000
+            }
+        }
+    }
+
+
+    .nf-error.field-wrap .nf-field-element:after {
+        right: 0px;
+        top: 0px;
+        height: 20px;
+        width: 20px;
+        line-height: 24px;
+        font-size: 12px;
+        text-indent: 1px;
+    }
+
+    .nf-pass.field-wrap .nf-field-element:after {
+        color: $turquoise;
+        right: 4px;
+        height: 30px;
+        line-height: 31px;
+        font-size: 20px;
+    }
+
+    .nf-input-limit {
+        margin: 0;
+    }
+
+    .five-sixths,
+    .four-sixths,
+    .one-fourth,
+    .one-half,
+    .one-sixth,
+    .one-third,
+    .three-fourths,
+    .three-sixths,
+    .two-fourths,
+    .two-sixths,
+    .two-thirds {
+        width: 100% !important;
+        margin-left: 0 !important;
+
+        @include bp-lg {
+            margin-left: 1.164103% !important;
+        }
+    }
+
+    .one-third, 
+    .two-sixths {
+        width: 100% !important;
+
+        @include bp-lg {
+            width: 32.55% !important;
+        }
+    }
+
+    .one-half {
+        width: 100% !important;
+
+        @include bp-lg {
+            width: 49.35% !important;
+        }
+    }
+
+    .first {
+        margin-left: 0 !important;
+    }
+
+    .last {
+        margin-right: 0 !important;
+    }
+    
+    .nf-field-container {
+        margin-bottom: 15px !important;
+    }
+
+    .nf-response-msg {
+        background-color: $turquoise;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+    }
+
+   
+   .nf-form-content button,
+   .nf-form-content input[type=button],
+   .nf-form-content input[type=submit] {
+        font-size: 1.8rem !important;
+        border: solid 2px $turquoise;
+        line-height: 60px;
+    }
+
+}
+
+.form-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.search-page-no-results {
+    font-size: 20px;
+    padding: 50px 0 20px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 28px;
+    }
+}
+
+.search-form--results {
+    font-size: 0;
+    box-shadow: 0 0 8px 0 rgba($lightgrey, 0.5);
+    margin-bottom: 100px;
+    display: flex;
+
+    input {
+        font-size: 1.8rem;
+        width: calc(100% - 60px);
+        vertical-align: middle;
+        display: inline-block;
+        border: solid 1px $lightgrey;
+        background-color: #FFFFFF;
+        color: $dark;
+    }
+
+    button {
+        @include resetbtn();
+        display: inline-block;
+        vertical-align: middle;
+        width: 60px;
+        height: 60px;
+        font-size: 2.4rem;
+        background: #FFF;
+        color: $turquoise;
+        transition: background 300ms, color 300ms, border 300ms;
+        margin-right: -1px;
+        border: solid 1px $lightgrey;
+        border-left: none;
+        cursor: pointer;
+
+        &:hover {
+            border-color: $turquoise;
+            color: #FFFFFF;
+            background-color: $turquoise;
+        }
+
+    }
+}

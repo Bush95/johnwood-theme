@@ -1,0 +1,200 @@
+@import "~normalize.css/normalize.css";
+@import "~izimodal/css/iziModal.css";
+@import "~tiny-slider/dist/tiny-slider.css";
+
+// Bootstrap
+@import '~bootstrap/scss/functions';
+
+@import 'colours';
+@import 'custom';
+
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/print';
+
+// Premium font awesome
+// @import 'fontawesome/fontawesome.scss';
+// @import 'fontawesome/brands.scss';
+// @import 'fontawesome/regular.scss';
+// @import 'fontawesome/solid.scss';
+// @import 'fontawesome/light.scss';
+// @import '~@fortawesome/fontawesome-free/css/all.css';
+
+$fa-font-path: $assets + '/fonts/fontawesome-webfonts';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+@import 'mixins';
+@import 'typography';
+@import 'blocks/blocks';
+@import 'components/components';
+@import 'content-blocks/content-blocks';
+@import 'routes/routes';
+
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.no-padding-col {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.screen-reader-response,
+.screen-reader-text,
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.noafter {
+    &::after {
+        display: none;
+    }
+}
+
+.alignleft {
+    float: left;
+    padding: 7px 10px 0 0;
+}
+.alignright {
+    float: right;
+    padding: 7px 0 0 10px
+}
+.aligncenter {
+    display: block;
+    margin: 15px auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+::selection{
+    background-color: #888888;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 2.4rem;
+    line-height: 3.4rem; 
+    padding: 30px 0;
+
+    &::before {
+        content: '،،';
+        font-size: 6rem;
+        color: $leading-color;        
+    }
+}
+
+//Table
+table {
+    text-align: left;
+    font-size: 1.4rem;
+    border-spacing: 0;
+    display: block;
+    overflow: auto;
+    border-collapse: collapse;
+
+    th,td {
+        padding: 17px 16px;
+        width: 25%;
+        border: solid 1px #DDDDDD;
+    }
+    th {
+        background-color: #CCCCCC;
+        color: #FFFFFF;
+    }
+}
+
+
+ul.resetlist {
+    @include resetlist();
+}
+
+// Pagination
+.pagination {
+    margin-top: 50px;
+
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+
+    &::before {
+        content: '';
+        display: table;
+    }
+}
+
+.tns-nav {
+    text-align: center;
+
+    button {
+        @include resetbtn();
+        position: relative;
+        display: inline-block;
+        opacity: 0.45;
+        margin: 0 6px;
+        height: 20px;
+        width: 14px;
+        background-color: transparent !important;
+        transition: opacity 150ms;
+
+        &:focus {
+            outline: none;
+            opacity: 0.8;
+        }
+
+        &:hover {
+            opacity: 0.85;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 14px;
+            background-color: #3B3B3B;
+            transition: background-color 150ms;
+        }
+
+        &.tns-nav-active {
+            opacity: 1;
+        }
+
+        &.tns-nav-active::before {
+            background-color: $turquoise;
+        }
+    }
+}

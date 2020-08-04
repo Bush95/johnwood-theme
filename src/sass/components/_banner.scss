@@ -1,0 +1,388 @@
+$bannerMobileHeight: 466px;
+$bannerDesktopRatio: 0.35;
+
+.banner {
+	position: relative;
+
+	.home & {
+		@include bp-lg {
+			margin-top: 0;
+		}
+	}
+	
+	> .banner__carousel {
+		> .banner__slide { // This works only when js is disabled. Prevents jumping content
+			display: none;
+
+			&:first-child {
+				display: block;
+			}
+		}
+	}
+
+	&__slide {
+		position: relative;
+		width: 100%;
+	}
+
+	&__content {
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: transform 400ms, opacity 400ms;
+
+		[data-slidecolor="white"] & {
+			color: #FFFFFF;
+		}
+	}
+
+	&__title {
+		margin: 0px 0 10px 0;
+	    font-size: 4.4rem;
+	    line-height: 4.4rem;
+	    font-weight: 300;
+	    margin-left: -2px;
+
+	    @include bp-lg {
+	        letter-spacing: 1.75px;
+	        font-size: 7rem;
+	        line-height: 7.8rem;
+			margin: 30px 0 10px 0;
+    	}
+	}
+
+	&__text {
+		font-size: 1.6rem;
+		line-height: 2.6rem;
+		margin-bottom: 40px;
+		margin-top: 0;
+	}
+
+	&__links {
+		margin-top: 40px;
+		font-size: 0;
+
+		.btn {
+			margin-right: 8px;
+			margin-bottom: 8px;
+
+			@include media-breakpoint-down(md) {
+				padding: 0 15px;
+				height: 48px;
+				line-height: 48px;
+			}
+		}
+
+		.btn.btn--border {
+			[data-slidecolor="white"] & {
+				border-color: #FFFFFF;
+				color: #FFFFFF;
+
+				&:hover {
+					color: $turquoise;
+					border-color: $turquoise;
+				}
+			}
+		}
+	}
+		
+	&__video-btn {
+		@include resetbtn;
+		text-align: center;
+		display: block;
+		color: #000;
+		margin: 0 auto;
+		cursor: pointer;
+
+		[data-slidecolor="white"] & {
+			color: #FFFFFF;
+		}
+
+		i {
+			display: block;
+			margin: 0 auto;
+			width: 68px;
+			height: 68px;
+			line-height: 65px;
+			border-radius: 100px;
+			border: solid 3px #000;
+			font-size: 2.2rem;
+			transition: transform 200ms, background 200ms;
+
+			[data-slidecolor="white"] & {
+				border-color: #FFFFFF;
+			}
+
+			&::before {
+				display: inline-block;
+				transform: translateX(2px);
+			}
+		}
+
+		span {
+			white-space: nowrap;
+			display: block;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-top: 25px
+		}
+
+		&:hover {
+			i {
+				transform: scale(1.1);
+				background: rgba(#000, 0.2);
+
+
+				[data-slidecolor="white"] & {
+					background: rgba(#FFFFFF, 0.2);
+				}
+			}
+		}
+
+		&:focus {
+			outline: none;
+
+			i {
+				&::before {
+					text-shadow: 0 0 4px $leading-color;
+				}
+			}
+		}
+	}
+
+	&__slide {
+		// height: $bannerMobileHeight;
+		padding-bottom: 50px;
+
+		@include media-breakpoint-up(md) {
+			display: flex;
+			align-items: center;
+			padding-bottom: 0;
+		}
+		@include media-breakpoint-up(lg) {
+			height: calc(#{map-get($grid-breakpoints, 'lg')} * 1.4 * #{$bannerDesktopRatio});
+		}
+		@include media-breakpoint-up(xl) {
+			height: calc(#{map-get($grid-breakpoints, 'xl')} * 1.3 * #{$bannerDesktopRatio});
+		}
+		@include media-breakpoint-up(fhd) {
+			height: calc(#{map-get($grid-breakpoints, 'fhd')} * #{$bannerDesktopRatio});
+		}
+		@include media-breakpoint-up(qhd) {
+			height: calc(#{map-get($grid-breakpoints, 'qhd')} * #{$bannerDesktopRatio});
+		}
+
+		@include bp-lg {
+			.home & {
+				min-height: calc(100vh - 50px);
+			}
+		}
+
+		.banner__content {
+			opacity: 0;
+			transform: translateY(calc(-50% - 15px));
+		}
+		&.tns-slide-active {
+			.banner__content {
+				opacity: 1;
+				transition-delay: 100ms;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	&__image {
+		display: block;
+		position: relative;
+
+		@include bp-lg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		&::before { // Image Overlay
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: rgba(#FFF, 0.14);
+
+			@include bp-lg {
+				background: rgba(#FFF, 0.08);
+			}
+
+			[data-slidecolor="white"] & {
+				background: rgba(#000, 0.14);
+
+				@include bp-lg {
+					background: rgba(#000, 0.08);
+				}
+			}
+		}
+
+		img,
+		video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			font-family: 'object-fit: cover;';
+			vertical-align: middle;
+			border-radius: 0;
+			height: 80vmax;
+	
+			@include bp-lg {
+				height: 100%;
+			}	
+		}
+	}
+
+	.tns-controls {
+		display: none;
+
+		@include bp-lg {
+			display: block;
+		}
+
+		button {
+			@include resetbtn();
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			color: $turquoise;
+		    text-align: center;
+		    width: 47px;
+		    height: 47px;
+		    line-height: 47px;
+		    background: transparent;
+		    will-change: transform;
+		    transition: all .42s ease-in-out;
+		    cursor: pointer;
+		    z-index: 10;
+
+		    &:focus {
+		    	outline: none;
+		    }
+
+		    &::after {
+			    position: absolute;
+			    content: '';
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    background: #ffffff;
+			    transition: inherit;
+			    z-index: -1;
+			    opacity: 0.7;
+		    }
+
+		    &:hover {
+		    	color: #FFFFFF;
+
+		    	&::after {
+		    		background-color: $turquoise;
+		    		border-radius: 50%
+		    	}
+		    }
+		}
+		button[data-controls="prev"] {
+			left: 15px;
+
+			@include bp-fhd {
+				left: 75px;
+			}
+
+			&:hover {
+				&::after {
+		    		transform: rotate(-360deg);
+				}
+			}
+		}
+		button[data-controls="next"] {
+			right: 15px;
+
+			@include bp-fhd {
+				right: 75px;
+			}
+
+			&:hover {
+				&::after {
+		    		transform: rotate(360deg);
+				}
+			}
+		}
+	}
+
+	.tns-nav {
+		position: absolute;
+		bottom: 15px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 2;
+
+		@include bp-lg {
+			display: none;
+		}
+
+		button {
+			@include resetbtn();
+			opacity: 0.6;
+			margin: 0 6px;
+			background-color: #3B3B3B;
+			transition: opacity 150ms, background-color 400ms;
+
+			&:focus {
+				outline: none;
+				opacity: 0.8;
+			}
+
+			&:hover {
+				opacity: 0.85;
+			}
+
+			&.tns-nav-active {
+				opacity: 1;
+			}
+		}
+	}
+
+
+			
+	&[data-bannercolor="white"] {
+		.tns-nav button {
+			background-color: #FFFFFF;
+		}
+	}
+	
+
+	&.banner--post {
+		.banner__title {
+			margin-bottom: 20px;
+
+			&::after {
+				display: block;
+				content: '';
+				width: 40px;
+				height: 4px;
+				margin: 20px auto;
+				position: static;
+				background: $turquoise;
+			}
+		}
+		.banner__date {
+			font-size: 1.6rem;
+			margin: 30px 0;
+
+			@include bp-lg {
+				font-size: 2rem;
+			}
+		}
+	}
+}
